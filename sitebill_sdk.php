@@ -58,6 +58,13 @@ class Sitebill_SDK {
         return $result;
     }
 
+    /**
+     * Удаляем запись из таблицы
+     * @param $model_name
+     * @param $primary_key
+     * @param $key_value
+     * @return array|mixed
+     */
     function delete ( $model_name, $primary_key, $key_value ) {
         $params = array(
             'action' => 'model',
