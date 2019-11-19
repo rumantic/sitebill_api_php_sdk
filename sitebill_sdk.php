@@ -79,6 +79,27 @@ class Sitebill_SDK {
     }
 
     /**
+     * Загружаем данные о записи из таблицы
+     * @param $model_name
+     * @param $primary_key
+     * @param $key_value
+     * @return array|mixed
+     */
+    function load_data ( $model_name, $primary_key, $key_value ) {
+        $params = array(
+            'action' => 'model',
+            'do' => 'load_data',
+            'session_key' => $this->session_key,
+            'model_name' => $model_name,
+            'primary_key' => $primary_key,
+            'key_value' => $key_value,
+        );
+        $result = $this->executeHTTPRequest($this->queryUrl, $params);
+        return $result;
+    }
+
+
+    /**
      * Получаем ключ session_key по логину и паролю
      * @param $login
      * @param $password

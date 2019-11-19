@@ -18,6 +18,10 @@ $new_record_id = $result['data']['new_record_id'];
 echo 'ID новой записи: '.$new_record_id.'<br>';
 print_r($result);
 
+echo 'Загружаем запись<br>';
+$result = $sitebill_sdk->load_data('data', 'id', $new_record_id);
+print_r($result);
+
 echo 'Удаляем запись<br>';
 $result = $sitebill_sdk->delete('data', 'id', $new_record_id);
 print_r($result);
